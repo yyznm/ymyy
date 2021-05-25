@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#D5D5D5"
+        tools:context=".ui.notifications.NotificationsFragment">
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="18dp"
+                    android:paddingBottom="33dp"
+                    android:background="#000000">
+        <ImageView android:id="@+id/top_img"
+                   android:src="@drawable/icon"
+                   android:layout_width="80dp"
+                   android:layout_height="80dp"
+                   android:layout_centerHorizontal="true"/>
+        <TextView android:id="@+id/top_title"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@id/top_img"
+                  android:layout_centerHorizontal="true"
+                  android:layout_marginTop="5dp"
+                  android:textColor="#fff"
+                  android:textStyle="bold"
+                  android:textSize="18sp"
+                  android:text="一秒语音"/>
+        <TextView android:id="@+id/ver_name"
+                android:layout_width="wrap_content"
+                  android:layout_toRightOf="@id/top_title"
+                  android:layout_alignBottom="@id/top_title"
+                  android:layout_height="wrap_content"
+                  android:layout_marginLeft="2dp"
+                  android:textSize="12sp"
+                  android:textColor="#CCCCCC"
+                  android:text="v1.1"/>
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@id/top_title"
+                  android:layout_centerHorizontal="true"
+                  android:layout_marginTop="8dp"
+                  android:textSize="13sp"
+                  android:textColor="#fff"
+                  android:text="By: yy祝"/>
+    </RelativeLayout>
+
+
+    <ListView
+            android:background="#fff"
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    </ListView>
+
+</LinearLayout>

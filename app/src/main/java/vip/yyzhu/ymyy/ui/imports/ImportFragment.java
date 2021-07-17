@@ -6,10 +6,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.provider.DocumentsContract;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +21,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import vip.yyzhu.ymyy.InputFileActivity;
 import vip.yyzhu.ymyy.R;
 import vip.yyzhu.ymyy.St;
-import vip.yyzhu.ymyy.WebActivity;
 import vip.yyzhu.ymyy.adapter.RecycleViewDivider;
 import vip.yyzhu.ymyy.tool.Tool;
 import vip.yyzhu.ymyy.adapter.XzListAdapter;
@@ -68,7 +66,8 @@ public class ImportFragment extends Fragment {
         // 列表数据
         List<yypItem> datas = new ArrayList<>();
         // 分割线
-        list.addItemDecoration(new RecycleViewDivider(con, 1, Color.argb(0.2f, 0, 0, 0)));
+//        Color.argb(0.2f, 0, 0, 0)
+        list.addItemDecoration(new RecycleViewDivider(con, 1, 855638016));
         // 布局
         list.setLayoutManager(new LinearLayoutManager(con));
         // 关闭动画
@@ -185,7 +184,7 @@ public class ImportFragment extends Fragment {
                 // 设置标题
                 builder.setTitle("更多操作");
                 // 指定下拉列表的显示数据
-                final String[] cities = {"从网络下载", "从本地导入", "打开系统文件管理", "点击语音文件可以试听"};
+                final String[] cities = {"从网络下载", "从本地导入", "打开系统文件管理", "长按语音文件可以试听"};
                 // 设置一个下拉的列表选择项
                 builder.setItems(cities, new DialogInterface.OnClickListener() {
                     @Override
@@ -204,7 +203,7 @@ public class ImportFragment extends Fragment {
                                     .show();
                         } else if (which == 3) { //点击语音文件可以试听
                             // 提示
-                            Tool.makeText2(con, "点击语音文件可以试听\n长按文件可以管理");
+                            Tool.makeText2(con, "长按语音文件可以试听\n点击文件可以管理");
                         }
                     }
                 });

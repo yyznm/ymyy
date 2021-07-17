@@ -68,7 +68,8 @@ public class InputFileActivity extends AppCompatActivity {
 
         final List<yypItem> datas = new ArrayList<>();
         RecyclerView list = findViewById(R.id.list);
-        list.addItemDecoration(new RecycleViewDivider(con, 1, Color.argb(0.2f, 0, 0, 0)));
+//        Color.argb(0.2f, 0, 0, 0)
+        list.addItemDecoration(new RecycleViewDivider(con, 1, 855638016));
         list.setLayoutManager(new LinearLayoutManager(con));
         ((DefaultItemAnimator) list.getItemAnimator()).setSupportsChangeAnimations(false);
         adapter = new XzListAdapter(datas, file, con);

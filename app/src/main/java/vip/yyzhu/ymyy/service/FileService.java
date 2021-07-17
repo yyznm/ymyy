@@ -68,6 +68,7 @@ public class FileService extends Service {
         // 目录不存在
         if (!file.exists()) {
             System.out.println("目录不存在, 出错");
+            Tool.makeText1(con, "微信目录不存在, 出错");
         } else {
             // voice2会有多个 而且在第二击
             File[] files = file.listFiles();
@@ -271,7 +272,8 @@ public class FileService extends Service {
         // 布局
         list.setLayoutManager(new LinearLayoutManager(con));
         // 分割线
-        list.addItemDecoration(new RecycleViewDivider(con, 1, Color.argb(0.2f, 0, 0, 0)));
+//        Color.argb(0.2f, 0, 0, 0)
+        list.addItemDecoration(new RecycleViewDivider(con, 1, 855638016));
         // 关闭动画
         ((DefaultItemAnimator) list.getItemAnimator()).setSupportsChangeAnimations(false);
         // 适配器
@@ -413,12 +415,13 @@ public class FileService extends Service {
                         if (file2.lastModified() > d.getTime()) {
 
                             //这里 文件名 4-20 是纯数字, 如果不是纯数字有可能是别人发来的语音, 为了防止换错了
-                            String s = file2.getName().substring(4, 20);
-                            Pattern pattern = Pattern.compile("[0-9]*");
-                            Matcher isNum = pattern.matcher(s);
-                            if (isNum.matches()) {
+//                            String s = file2.getName().substring(4, 20);
+//                            Pattern pattern = Pattern.compile("[0-9]*");
+//                            Matcher isNum = pattern.matcher(s);
+//
+//                            if (isNum.matches()) {
                                 return file2;
-                            }
+//                            }
                         }
                     }
                 }
